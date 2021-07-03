@@ -1,9 +1,11 @@
-import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
-import style from "./Login.module.scss";
+import Button from "../../components/Button/Button";
+import style from "./Register.module.scss";
 
 
-export default function Login() {
+export default function Register() {
+
+
 
      return <div className="container">
           <div className="">
@@ -11,8 +13,11 @@ export default function Login() {
           </div>
           <div className="" style={{ padding: '20px 10px' }}>
                <Logo width={30} height={30} />
-               <h1>Login Into Twitter</h1>
+               <h1>Create Account</h1>
 
+
+               <label htmlFor="name">Name</label>
+               <input type="text" name="name" id="name" datatype="name" />
 
                <label htmlFor="username">Username</label>
                <input type="text" name="username" id="username" datatype="username" />
@@ -20,12 +25,15 @@ export default function Login() {
                <label htmlFor="password">Password</label>
                <input type="password" name="password" id="password" datatype="password" />
 
-               <Button text="Login" />
+               <label htmlFor="confirmPassword">Confirm Password</label>
+               <input type="password" name="confirmPassword" id="confirmPassword" datatype="password" />
+
+               <Button text="Creat Account" />
 
                <div className={style.lastSection}>
-                    <a className={style.link} href="#">Forgot Password?</a>
+                    <a className={style.link} href="#">Already Have an Account?</a>
                     <span>.</span>
-                    <a className={style.link} href="#">Sign up for Twitter</a>
+                    <a href="#" className={style.link}>Sign In</a>
                </div>
 
           </div>
