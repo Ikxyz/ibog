@@ -2,7 +2,7 @@
 
 
 .btn {
-     font-size: 1.5rem;
+     font-size: 1rem;
      width: fit-content;
      padding: 15px 20px;
      border: none;
@@ -10,7 +10,7 @@
      font-weight: bold;
      background-color: $color;
      border-radius: 30px;
-     margin: 20px auto;
+     margin: 0px auto;
 
      &:hover {
           background-color: $color-deep;

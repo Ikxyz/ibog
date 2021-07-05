@@ -48,7 +48,8 @@ label {
   color: gray;
 }
 
-input {
+input,
+textarea {
   width: 100%;
   // padding: 10px 20px;
   padding: 15px 5px;
@@ -58,8 +59,13 @@ input {
   border-radius: 5px;
 
   &:focus {
+    margin: 5px 0px 5px 0px;
     border: solid 2px $color;
   }
+}
+
+textarea {
+  border: solid 2px $color;
 }
 
 div {

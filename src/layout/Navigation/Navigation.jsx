@@ -9,6 +9,7 @@ export default function Navigation() {
 
      return <>
           <div className={style.navbar} >
+
                <Logo width="30" />
                <ul>
                     <li className={style.navItem}> <FontAwesomeIcon icon={faHome} /> Home </li>
@@ -24,7 +25,8 @@ export default function Navigation() {
 
                <Button text="Tweet" />
 
-               <div className={style.minBio}><MinBio />
+               <div className={style.minBio}>
+                    <MinBio />
                </div>
           </div>
 

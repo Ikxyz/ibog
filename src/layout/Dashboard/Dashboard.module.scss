@@ -13,8 +13,9 @@
 }
 
 .postContainer {
-     background-color: skyblue;
-     display: grid;
+     box-shadow: 0px 0px 5px #f3f3f3;
+     display: flex;
+     flex-direction: column;
      grid-template-rows: 30% 70%;
 }
 
@@ -23,5 +24,5 @@
 }
 
 .trendingContainer {
-     background-color: slateblue;
+     // background-color: slateblue;
 }
