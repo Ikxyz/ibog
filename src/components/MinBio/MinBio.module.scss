@@ -1,0 +1,31 @@
+.bio {
+
+     display: grid;
+     grid-template-columns: auto 1fr 10%;
+     align-items: flex-start;
+     justify-content: start;
+
+     img {
+          width: 50px;
+     }
+
+     ul {
+          margin: 0px;
+          padding: 0px;
+          padding-left: 10px;
+
+
+     }
+
+     small {
+          color: gray;
+     }
+
+     h3 {
+          padding: 0px;
+          margin: 0px;
+     }
+
+
+     span {}
+}

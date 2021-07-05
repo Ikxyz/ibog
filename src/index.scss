@@ -2,7 +2,11 @@ $color: #03A9F4;
 $color-deep: #036b9b;
 $bg: #f1f0f0;
 
-
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 .bg {
   background-color: $bg;
@@ -74,6 +78,6 @@ div {
   text-decoration: none;
 
   &:hover {
-       text-decoration: underline;
+    text-decoration: underline;
   }
 }

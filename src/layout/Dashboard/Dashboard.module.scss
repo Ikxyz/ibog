@@ -1,13 +1,15 @@
 .container {
-     width: 100%;
+     width: 70%;
      height: 100vh;
+     margin: auto;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 
 }
 
+
 .navContainer {
-     background-color: tomato;
+     // background-color: tomato;
 }
 
 .postContainer {

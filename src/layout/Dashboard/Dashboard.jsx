@@ -1,3 +1,4 @@
+import Navigation from "../Navigation/Navigation"
 import style from "./Dashboard.module.scss"
 
 export default function Dashboard() {
@@ -8,7 +9,7 @@ export default function Dashboard() {
           <div className={style.container}>
 
                <div className={style.navContainer}>
-                    <h2>Navigation</h2>
+                    <Navigation />
                </div>
                <div className={style.postContainer}>
                     <h2>Create Post / News Feed</h2>

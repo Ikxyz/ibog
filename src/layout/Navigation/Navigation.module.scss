@@ -1,0 +1,36 @@
+.navbar {
+
+
+
+     ul {
+          padding: 0px;
+          margin: 0px;
+          font-size: 1.5rem;
+          list-style: none;
+
+     }
+
+     svg {
+          margin-right: 15px;
+     }
+
+}
+
+// .active {
+//      color: $color;
+// }
+
+.navItem {
+
+     padding: .7em 0px;
+     text-align: start;
+     display: flex;
+     align-content: center;
+
+}
+
+.minBio {
+     position: absolute;
+     bottom: 0;
+     margin-bottom: 1em;
+}

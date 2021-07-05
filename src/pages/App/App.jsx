@@ -3,7 +3,7 @@ import React from "react";
 import "./App.scss";
 import Login from "../Login/Login";
 import Register from "../Register/Register";
-import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../../layout/Dashboard/Dashboard";
 
 export default function App() {
 
