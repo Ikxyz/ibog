@@ -15,10 +15,10 @@ export default function Post() {
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. In sint sit eaque a facere nulla blanditiis repellat sunt, sequi quod fuga soluta totam fugit asperiores eius rerum vel culpa. Ab?
                </p>
 
-               <ul>
-                    <li><FontAwesomeIcon icon={faHeart} /></li>
-                    <li>  <FontAwesomeIcon icon={faCommentAlt} /></li>
-                    <li><FontAwesomeIcon icon={faShare} /></li>
+               <ul className={style.post_content}>
+                    <li className={style.post_item}><FontAwesomeIcon icon={faHeart} /></li>
+                    <li className={style.post_item}>  <FontAwesomeIcon icon={faCommentAlt} /></li>
+                    <li className={style.post_item}><FontAwesomeIcon icon={faShare} /></li>
 
                </ul>
 

@@ -1,3 +1,5 @@
+@import "../../index.scss";
+
 .bio {
 
      display: grid;
@@ -5,27 +7,26 @@
      align-items: flex-start;
      justify-content: start;
 
-     img {
-          width: 50px;
-     }
-
-     ul {
-          margin: 0px;
-          padding: 0px;
-          padding-left: 10px;
+}
 
 
-     }
+.min_bio_img {
+     width: 50px;
+}
 
-     small {
-          color: gray;
-     }
+.min_bio_ul {
+     margin: 0px;
+     padding: 0px;
+     padding-left: 10px;
+     list-style: none;
+}
 
-     h3 {
-          padding: 0px;
-          margin: 0px;
-     }
+.min_bio_small {
+     color: gray;
+}
 
-
-     span {}
+.min_bio_h3 {
+     color: $color;
+     padding: 0px;
+     margin: 0px;
 }

@@ -9,14 +9,21 @@ export default function MinBio(props) {
 
      return <>
           <div className={style.bio}>
-               <img src={props?.profilePhoto || DefaultPhoto} alt="profile photo" />
 
-               <ul>
-                    <li><h3>{props?.name || "Jane Doe"}</h3></li>
-                    <li><small>@{props?.username || "janedoe45"}</small></li>
+               <img className={style.min_bio_img} src={props?.profilePhoto || DefaultPhoto} alt="profile photo" />
+
+               <ul className={style.min_bio_ul}>
+                    <li>
+                         <h3 className={style.min_bio_h3}>{props?.name || "Jane Doe"}</h3>
+                    </li>
+                    <li>
+                         <small className={style.min_bio_small}>
+                              @{props?.username || "janedoe45"}
+                         </small>
+                    </li>
                </ul>
 
-               <span> <FontAwesomeIcon icon={faEllipsisH} /></span>
+               <span > <FontAwesomeIcon icon={faEllipsisH} /></span>
 
           </div>
      </>

@@ -4,12 +4,12 @@
      margin: auto;
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-
+     background-color: black;
 }
 
 
 .navContainer {
-     // background-color: tomato;
+     background-color: tomato;
 }
 
 .postContainer {
@@ -17,12 +17,5 @@
      display: flex;
      flex-direction: column;
      grid-template-rows: 30% 70%;
-}
-
-.feedContainer {
-     background-color: yellow;
-}
-
-.trendingContainer {
-     // background-color: slateblue;
+     background-color: aquamarine;
 }

@@ -1,7 +1,7 @@
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
 import style from "./Login.module.scss";
-
+import { Link } from "react-router-dom"
 
 export default function Login() {
 
@@ -23,9 +23,9 @@ export default function Login() {
                <Button text="Login" />
 
                <div className={style.lastSection}>
-                    <a className={style.link} href="#">Forgot Password?</a>
+                    <Link to="#" className={style.link} >Forgot Password?</Link>
                     <span>.</span>
-                    <a className={style.link} href="#">Sign up for Twitter</a>
+                    <Link to="/register" className={style.link}  >Sign up for Twitter</Link>
                </div>
 
           </div>
