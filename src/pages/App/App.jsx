@@ -1,19 +1,23 @@
 import React from "react";
 // import Logo from "../../components/Logo/Logo";
-import CreatePost from "../../components/CreatePost/CreatePost"
-import Post from "../../components/Post/Post"
-import Navigation from "../../layout/Navigation/Navigation"
-import style from "./App.module.scss"
+
 import Login from "../../pages/Login/Login"
 import Register from "../../pages/Register/Register"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Splash from "../Splash/Splash";
+import Home from "../Home/Home";
+import AuthProvider from "../../providers/useAuth";
+import Guard from "../../routes/gaurd";
 
 export default function App() {
 
 
 
      return <>
+
+          <AuthProvider>
+
+
 
           <Router>
 
@@ -28,31 +32,17 @@ export default function App() {
                     </Route>
 
                     <Route path="/register">
+
+                              <Guard>
                          <Register />
+                              </Guard>
                     </Route>
 
                     <Route path="/home">
 
-                         <div className={style.container}>
-
-                              <div className={style.navContainer}>
-                                   <Navigation />
-                              </div>
-                              <div className={style.postContainer}>
-                                   <CreatePost />
-                                   <div style={{ "margin": "10% 0px", overflow: "auto", maxHeight: "70vh" }}>
-                                        <Post />
-                                        <Post />
-                                        <Post />
-                                        <Post />
-                                        <Post />
-                                        <Post />
-                                        <Post />
-                                   </div>
-                              </div>
-
-
-                         </div>
+                              <Guard>
+                                   <Home />
+                              </Guard>
 
                     </Route>
 
@@ -61,6 +51,8 @@ export default function App() {
 
 
           </Router>
+
+          </AuthProvider>
 
      </>
 

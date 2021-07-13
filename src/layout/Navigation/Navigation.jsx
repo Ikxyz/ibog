@@ -4,8 +4,15 @@ import Button from "../../components/Button/Button";
 import style from "./Navigation.module.scss";
 import { faHome, faHashtag, faBell, faEnvelope, faBookmark, faList, faUser, faEllipsisH } from "@fortawesome/free-solid-svg-icons";
 import MinBio from "../../components/MinBio/MinBio";
+import { useAuth } from "../../providers/useAuth";
+import { Redirect } from "react-router-dom";
 
 export default function Navigation() {
+
+
+     const { logOut, user, token } = useAuth();
+
+
 
      return <>
           <div className={style.navbar} >
@@ -23,10 +30,10 @@ export default function Navigation() {
 
                </ul>
 
-               <Button text="Tweet" />
+               <Button text="Logout" onClick={logOut} />
 
                <div className={style.minBio}>
-                    <MinBio />
+                    <MinBio name={`${user.firstName} ${user.lastName}`} username={user.username} />
                </div>
           </div>
 

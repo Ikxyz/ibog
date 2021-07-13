@@ -10,7 +10,7 @@ export default function Button(props) {
 
      return <>
           <div style={{ textAlign: buttonAlignment, }}>
-               <button className={buttonStyle + " color"} type={buttonType} >{props?.text || "No Text Set"}</button>
+               <button className={buttonStyle + " color"} onClick={props.onClick} type={buttonType} >{props?.text || "No Text Set"}</button>
           </div>
      </>
 }

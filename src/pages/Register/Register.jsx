@@ -2,15 +2,47 @@ import { useState } from "react"
 import Logo from "../../components/Logo/Logo";
 import Button from "../../components/Button/Button";
 import style from "./Register.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import { HOST } from "../../config";
 
 
 export default function Register() {
 
      const [user, setUser] = useState({ name: "", username: "", password: "", confirmPassword: "" });
 
-     function register(formEvent) {
+     const history = useHistory();
+
+    async function onRegister(formEvent) {
           formEvent.preventDefault();
+
+        try {
+          const url =HOST+ "/user/register";
+
+          const name = user.name.split(" ");
+
+          const payload = {
+               ...user,
+               email: user.username + "@gmail.com",
+               firstName: name[0] ?? "-",
+               lastName: name[1] ?? name[0] ?? "-"
+          }
+
+          const headers = {"content-type":"application/json"}
+
+          delete payload['name'];
+          delete payload['confirmPassword'];
+
+          console.log(payload)
+
+          const result = await fetch(url, { method:"post",body:JSON.stringify(payload),headers }).then(e=>e.json());
+
+          alert(result.message);
+
+          history.push("/login");
+        } catch (error) {
+          alert("Error occurred creating account, check your internet connection and try again");
+        }
+
      }
 
      function onChange(e) {
@@ -22,8 +54,8 @@ export default function Register() {
 
 
 
-     return <form onSubmit={register}>
-          <h1>{JSON.stringify(user)}</h1>
+     return <form onSubmit={onRegister}>
+          
           <div className="container">
                <div className="">
 
