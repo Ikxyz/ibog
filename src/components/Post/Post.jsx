@@ -4,15 +4,15 @@ import style from "./Post.module.scss";
 import { faHeart, faComment, faCommentAlt, faShare } from "@fortawesome/free-solid-svg-icons"
 
 
-export default function Post() {
+export default function Post(props) {
 
 
      return <>
 
           <div className={style['post-container']}>
-               <MinBio />
+               <MinBio name={props?.author_name || ""} username={props?.author_handle || ""} profilePhoto={props?.author_img || "'"} />
                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. In sint sit eaque a facere nulla blanditiis repellat sunt, sequi quod fuga soluta totam fugit asperiores eius rerum vel culpa. Ab?
+                    {props.content}
                </p>
 
                <ul className={style.post_content}>

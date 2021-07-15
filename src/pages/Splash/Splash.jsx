@@ -2,18 +2,22 @@ import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import style from "./Splash.module.scss";
 import Logo from "../../components/Logo/Logo";
+import { useAuth } from "../../providers/useAuth";
 
 
 export default function Splash() {
 
      const history = useHistory();
 
+     const { isLoggerIn } = useAuth();
+
      useEffect(() => {
-          setTimeout(() => {
-               // window.location.href = "./login";
-               history.push("/login", { name: "Jane Doe" });
-          }, 3000)
-     }, [])
+
+          if (isLoggerIn) {
+               history.push("/home");
+          }
+
+     }, [isLoggerIn]);
 
      return <>
           <div className={style.center}>

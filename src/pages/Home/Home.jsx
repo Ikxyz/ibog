@@ -2,6 +2,7 @@
 
 import CreatePost from "../../components/CreatePost/CreatePost"
 import Post from "../../components/Post/Post"
+import Posts from "../../components/Posts/Posts"
 import Navigation from "../../layout/Navigation/Navigation"
 import style from "./Home.module.scss"
 
@@ -21,13 +22,7 @@ export default function Home() {
                 <CreatePost />
                 
                 <div style={{ "margin": "10% 0px", overflow: "auto", maxHeight: "70vh" }}>
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
+                    <Posts />
                 </div>
             </div>
 

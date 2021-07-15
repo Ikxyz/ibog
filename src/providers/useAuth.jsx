@@ -2,7 +2,7 @@
 import { useContext, createContext, useState, useEffect } from "react";
 
 
-const defaultValue = { token: null, user: null, isLoggerIn: null, logOut: null };
+const defaultValue = { token: null, user: null, isLoggerIn: null, updateAuth: null, logOut: null };
 
 
 const AuthContext = createContext(defaultValue);
@@ -28,9 +28,12 @@ export default function AuthProvider(props) {
         window.location.href = "/login";
     }
 
+    function updateAuth(token, user) {
+        setToken(token)
+        setUser(user);
+    }
 
-
-    const value = { token, user, isLoggerIn, logOut };
+    const value = { token, user, isLoggerIn, logOut, updateAuth };
 
 
     useEffect(() => {
@@ -44,9 +47,13 @@ export default function AuthProvider(props) {
 
         if (!token || !user) {
             setIsLoggerIn(false)
+
         } else {
             setIsLoggerIn(true)
         }
+
+        localStorage.setItem("token", token);
+        localStorage.setItem("user", JSON.stringify(user));
 
     }, [token, user])
 

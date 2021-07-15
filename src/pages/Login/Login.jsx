@@ -5,11 +5,12 @@ import { Link } from "react-router-dom";
 import {useState} from "react";
 import {useHistory} from "react-router-dom";
 import  {HOST} from "../../config";
-
+import { useAuth } from "../../providers/useAuth";
 
 export default function Login() {
 
 
+     const { updateAuth } = useAuth();
      const history = useHistory();
 
      const [credentials,setCredentials] = useState({username:"",password:""})
@@ -35,12 +36,13 @@ export default function Login() {
      
                const headers = {"content-type":"application/json"}
      
-               const result = await fetch(url, { method:"post",body:JSON.stringify(payload),headers }).then(e=>e.json());
+               const { message, data } = await fetch(url, { method: "post", body: JSON.stringify(payload), headers }).then(e => e.json());
      
-               alert(result.message);
+               alert(message);
 
-               localStorage.setItem("token",result.data.token)
-               localStorage.setItem("user",JSON.stringify(result.data.user))
+
+               updateAuth(data.token, data.user);
+
      
                history.push("/home");
 
@@ -70,7 +72,13 @@ export default function Login() {
                <label htmlFor="password">Password</label>
                <input type="password" name="password" id="password" onChange={onChange } datatype="password" />
 
-               <Button text="Login" isSubmitButton={true} />
+
+                    <div style={{ margin: '20px 0px' }}>
+                         <Button text="Login" isSubmitButton={true} />
+                    </div>
+
+
+
 
                <div className={style.lastSection}>
                     <Link to="#" className={style.link} >Forgot Password?</Link>

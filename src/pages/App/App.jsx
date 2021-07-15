@@ -33,12 +33,20 @@ export default function App() {
 
                     <Route path="/register">
 
-                              <Guard>
+
                          <Register />
+
+                         </Route>
+
+                         <Route path="/home">
+
+                              <Guard>
+                                   <Home />
                               </Guard>
+
                     </Route>
 
-                    <Route path="/home">
+                         <Route path="**">
 
                               <Guard>
                                    <Home />
