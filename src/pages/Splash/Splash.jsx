@@ -12,10 +12,13 @@ export default function Splash() {
      const { isLoggerIn } = useAuth();
 
      useEffect(() => {
+          console.log(isLoggerIn)
 
-          if (isLoggerIn) {
-               history.push("/home");
+          if (!isLoggerIn) {
+               return history.push("/login");
           }
+
+          history.push("/home");
 
      }, [isLoggerIn]);
 

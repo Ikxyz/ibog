@@ -30,7 +30,7 @@ export default function Posts() {
         <p>No Post Yet!</p>
     }
 
-    return post.map(({ author, content }) => <Post author_name={author.name} author_username={author.handle} author_img={author.profileImg} content={content} />)
+    return post.map(({ author, content, id }) => <Post id={id} author_name={author.name} author_username={author.handle} author_img={author.profileImg} content={content} />)
 
 
 
